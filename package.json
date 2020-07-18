@@ -1,5 +1,5 @@
 {
-  "name": "rest-api-tutorial",
+  "name": "authFlowAPI",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -23,9 +23,10 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.27",
-    "mongoose": "^5.7.9",
-    "uuid": "^3.3.3",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.25",
     "swagger-ui-express": "^4.1.2",
-    "sync-request": "^6.1.0"
+    "sync-request": "^6.1.0",
+    "uuid": "^3.3.3"
   }
 }
