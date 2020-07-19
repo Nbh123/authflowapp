@@ -17,8 +17,8 @@ const options = {
 // mongoose.Promise = global.Promise;
 const connectWithRetry = () => {
     console.log('MongoDB connection with retry')
-    //mongoose.connect("mongodb://mongo:27017/authflowdb", options).then(()=>{
-    mongoose.connect("mongodb://localhost:27017/authflowdb", options).then(()=>{
+    mongoose.connect("mongodb://mongo:27017/authflowdb", options).then(()=>{
+    //mongoose.connect("mongodb://localhost:27017/authflowdb", options).then(()=>{
         console.log('MongoDB is connected')
         
     }).catch(err=>{

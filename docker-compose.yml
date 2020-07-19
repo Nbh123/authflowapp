@@ -13,8 +13,8 @@ services:
   mongo:
     image: mongo
     volumes:
-      - /var/lib/docker/volumes/mongodbdata/_data
-      #- ./data:/data/db #windows
+      #- /var/lib/docker/volumes/mongodbdata/_data
+      - ./data:/data/db #windows
     networks:
       - backend
     ports:
