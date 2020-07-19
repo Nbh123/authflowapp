@@ -20,7 +20,7 @@ app.use(function (req, res, next) {
     }
 });
 app.get('/', function (req, res) {
-    res.send('Here you go,Welcome to the Auth Flow Service!')
+    res.send('Here you go,running from heroku ,Welcome to the Auth Flow Service!')
   });
 
 app.use(bodyParser.json());
