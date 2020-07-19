@@ -1,0 +1,44 @@
+You can use Postman to create user as follows:
+- Create user method
+* POST localhost:3600/users
+ Body: {"firstName" : "ABZ",
+"lastName" : "XYC",
+"email" : "test@gmail.com",
+"password" : "password01"}
+
+Response will generate a user id, something like this:
+{
+    "id": "5f13c55c46b5dd00110d7837"
+}
+
+- User auth method generates jwt
+* POST localhost:3600/auth
+Body: #some data 
+{"email" : "m@gmail.com",
+"password" : "password01"}
+
+Response:
+{
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjEyYmY3ZjNlOTJlNzQwZjBmYjYxODkiLCJlbWFpbCI6Im1lZXRyYXZpMDA3QGdtYWlsLmNvbSIsInBlcm1pc3Npb25MZXZlbCI6MSwicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJSYXZpIEJoYXJnYXZhIiwicmVmcmVzaEtleSI6IlhiTnpuVDBMREg4SXg4b0tybTZYb0E9PSIsImlhdCI6MTU5NTA2NDg4NH0.avM1YA8WFxhLyQqpMSAs3kZOToGLoXlRUCSrFs5EYbc",
+    "refreshToken": "WXc1RWN4VGFqR1F0L09xTXlHODVIdGlRQlRKZ2NwbDVQZjZCMk00ZTlJOFkvUkpJbmZXYXY2NzV6OHlrc1RhL2gvQ29ML2lZOGVFQWRRbzN5M1ovYUE9PQ=="
+}
+
+- Get user method (get user by id generated while creating user)
+* GET localhost:3600/users/5f12bf7f3e92e740f0fb6189
+Authorization: "Please add the access token, prefix with Bearer"
+This should now look like this:
+Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjEyYmY3ZjNlOTJlNzQwZjBmYjYxODkiLCJlbWFpbCI6Im1lZXRyYXZpMDA3QGdtYWlsLmNvbSIsInBlcm1pc3Npb25MZXZlbCI6MSwicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJSYXZpIEJoYXJnYXZhIiwicmVmcmVzaEtleSI6IlhiTnpuVDBMREg4SXg4b0tybTZYb0E9PSIsImlhdCI6MTU5NTA2NDg4NH0.avM1YA8WFxhLyQqpMSAs3kZOToGLoXlRUCSrFs5EYbc
+
+Response:
+{
+    "firstName": "Ravi",
+    "lastName": "Bhargava",
+    "email": "m@gmail.com",
+    "password": "fkFOiAqGKZ4lPSw71rDJcQ==$nkE1wnu4zM3nHqHHHaSNsEvB0i3OtXhu6chHf2b1aotG3YV3eWWancjv6HzaIqK6kvbLfbqKCkVW+1rpqX22xw==",
+    "permissionLevel": 1,
+    "id": "5f12bf7f3e92e740f0fb6189"
+}
+
+- Get users list
+* GET localhost:3600/users
+or simply run in browser localhost:3600/users

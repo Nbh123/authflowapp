@@ -9,11 +9,12 @@ services:
       - "3600:3600"
     depends_on:
       - mongo
-
+    
   mongo:
     image: mongo
     volumes:
-      - ./data:/data/db
+      - /var/lib/docker/volumes/mongodbdata/_data
+      #- ./data:/data/db #windows
     networks:
       - backend
     ports:

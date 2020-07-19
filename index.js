@@ -19,6 +19,9 @@ app.use(function (req, res, next) {
         return next();
     }
 });
+app.get('/', function (req, res) {
+    res.send('Here you go,Welcome to the Auth Flow Service!')
+  });
 
 app.use(bodyParser.json());
 AuthorizationRouter.routesConfig(app);
