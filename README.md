@@ -1,6 +1,6 @@
 # Auth Flow Service
 
-## Before using
+## Pre-requisite
 
 - Please make sure that you have:
  - node.js installed (https://nodejs.org/)
